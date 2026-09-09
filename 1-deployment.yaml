@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: myexample-web
-        image: mehul1887/myexample-web
+        image: mehul1887/ingress-host-base-routing
         ports:
           - containerPort: 3000
 ---

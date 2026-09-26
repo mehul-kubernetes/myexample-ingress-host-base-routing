@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>kubernetes-ingress-host-base-routing-app2</title>
+    <title>Host Based Routing App2</title>
 
     <style>
         * {
@@ -15,94 +15,52 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: linear-gradient(135deg, #16A34A, #15803D);
+            background: linear-gradient(135deg, #16A34A, #22C55E);
             color: white;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            text-align: center;
         }
 
-        .container {
-            text-align: center;
-            background: rgba(255, 255, 255, 0.12);
-            padding: 40px;
+        .card {
+            background: rgba(255, 255, 255, .15);
+            padding: 45px;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-            max-width: 750px;
+            backdrop-filter: blur(12px);
+            border: 2px solid rgba(255, 255, 255, .25);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, .35);
+            max-width: 800px;
+            width: 90%;
         }
 
         h1 {
-            font-size: 2.2rem;
-            margin-bottom: 15px;
+            font-size: 42px;
+            margin-bottom: 25px;
         }
 
-        .app-name {
-            color: #FCD34D;
-            font-size: 1.4rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .info {
+        p {
+            font-size: 22px;
             margin: 15px 0;
-            font-size: 18px;
         }
 
-        code {
-            background: rgba(0, 0, 0, 0.25);
-            padding: 6px 12px;
-            border-radius: 8px;
-            font-size: 16px;
-        }
-
-        .status {
-            display: inline-block;
+        .url {
             margin-top: 25px;
-            background: #22C55E;
-            padding: 12px 22px;
-            border-radius: 30px;
+            font-size: 30px;
             font-weight: bold;
-            font-size: 18px;
-        }
-
-        footer {
-            margin-top: 30px;
-            font-size: 14px;
-            opacity: 0.9;
+            color: #FFF59D;
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <h1>🌐 Kubernetes Ingress Host-Based Routing Demo</h1>
+    <div class="card">
+        <h1>Host Based Routing App2</h1>
 
-        <div class="app-name">
-            kubernetes-ingress-host-base-routing-app2
-        </div>
+        <p><strong>Application:</strong> kubernetes-ingress-host-base-routing-app2</p>
 
-        <p class="info">
-            Application is successfully deployed on <strong>Kubernetes</strong>.
-        </p>
-
-        <p class="info">
-            Routing Type: <strong>Host-Based Routing</strong>
-        </p>
-
-        <p class="info">
-            Host Name:
-        </p>
-
-        <code>app2.example.co.in</code>
-
-        <div class="status">
-            ✅ APP2 - Running Successfully
-        </div>
-
-        <footer>
-            Kubernetes • NGINX Ingress Controller • Host-Based Routing Demo
-        </footer>
+        <div class="url">app2.myexample.co.in</div>
     </div>
 </body>
 

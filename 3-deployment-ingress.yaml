@@ -1,18 +1,17 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: myexample-cluster1
-  annotations:
-    kubernetes.io/ingress.class: nginx
+  name: minimal-ingress
 spec:
+  ingressClassName: nginx-example
   rules:
-    - host: web.myexample.myexample.co.in
+    - host: web-1.myexample.co.in
       http:
         paths:
-        - path: /
-          pathType: Prefix
-          backend:
-            service:
-              name: myexample-web
-              port:
-                name: api-port
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: myexample-web
+                port:
+                  number: 80

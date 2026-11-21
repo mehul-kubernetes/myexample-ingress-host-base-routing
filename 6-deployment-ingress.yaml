@@ -1,0 +1,39 @@
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: host-base-routing
+  namespace: default
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+spec:
+  ingressClassName: nginx
+
+  tls:
+    - hosts:
+        - app-1.myexample.co.in
+        - app-2.myexample.co.in
+      secretName: myexample-tls
+
+  rules:
+    - host: app-1.myexample.co.in
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: myexample-app1
+                port:
+                  number: 80
+
+    - host: app-2.myexample.co.in
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: myexample-app2
+                port:
+                  number: 80

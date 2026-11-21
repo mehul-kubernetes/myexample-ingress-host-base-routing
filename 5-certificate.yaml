@@ -1,0 +1,16 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: myexample-wildcard-certificate
+  namespace: default
+spec:
+  secretName: myexample-tls
+
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+    group: cert-manager.io
+
+  dnsNames:
+    - app-1.myexample.co.in
+    - app-2.myexample.co.in

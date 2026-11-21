@@ -12,7 +12,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: myexample-web
+                name: myexample-app1
                 port:
                   number: 80
 
@@ -23,6 +23,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: myexample-web
+                name: myexample-app2
                 port:
                   number: 80

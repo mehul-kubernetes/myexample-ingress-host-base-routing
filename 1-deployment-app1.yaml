@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myexample-web
+  name: myexample-app1
   labels:
-    app: myexample-web
+    app: myexample-app1
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: myexample-web
+      app: myexample-app1
   template:
     metadata:
-      name: myexample-web
+      name: myexample-app1
       labels:
-        app: myexample-web
+        app: myexample-app1
     spec:
       containers:
-      - name: myexample-web
-        image: mehul1887/ingress-host-base-routing
+      - name: myexample-app1
+        image: mehul1887/kubernetes-ingress-host-base-routing-app1
         ports:
           - containerPort: 80
 ---
@@ -25,9 +25,9 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: myexample-web
+  name: myexample-app1
   labels:
-    app: myexample-web
+    app: myexample-app1
 spec:
   type: ClusterIP
   ports:
@@ -35,4 +35,4 @@ spec:
       port: 80
       targetPort: 80
   selector:
-    app: myexample-web
+    app: myexample-app1
